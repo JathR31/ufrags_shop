@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +7,22 @@
 
 html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
     font-family: "Helvetica Neue", Arial, sans-serif;
     color: #111;
     line-height: 1.6;
+    background: #f8f8f8;
 }
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
 
 header {
     display: flex;
@@ -46,7 +56,6 @@ nav {
     padding: 0.5rem;
 }
 
-
 .topnav input {
     padding: 0.6rem 1rem;
     border: 1px solid #ddd;
@@ -55,6 +64,7 @@ nav {
     font-size: 0.9rem;
     margin-left: 1rem;
 }
+
 
 .banner {
     display: flex;
@@ -66,6 +76,7 @@ nav {
     color: white;
     padding: 4rem 2rem;
     position: relative;
+    background: url('banner-image.jpg') center/cover no-repeat;
 }
 
 .banner::after {
@@ -79,38 +90,21 @@ nav {
     z-index: 0;
 }
 
+.banner h1,
+.banner p,
+.banner button {
+    position: relative;
+    z-index: 1;
+}
+
 .banner h1 {
     font-size: 3rem;
-    z-index: 1;
-    position: relative;
     margin-bottom: 1rem;
 }
 
 .banner p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    z-index: 1;
-    position: relative;
-}
-
-.contact p {
-    font-size: 1rem;
-    z-index: 1;
-}
-
-.about p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    margin: 10px 150px 25px;
-    z-index: 1;
-    position: relative;
-}
-
-.about h2 {
-    text-align: center;
-    z-index: 1;
-    position: relative;
 }
 
 .banner button {
@@ -121,9 +115,27 @@ nav {
     border-radius: 25px;
     color: white;
     cursor: pointer;
-    z-index: 1;
-    position: relative;
 }
+
+
+.about, .contact {
+    text-align: center;
+    padding: 2rem;
+}
+
+.about h2 {
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1.2rem;
+    margin: 10px 150px 25px;
+}
+
+.contact p {
+    font-size: 1rem;
+}
+
 
 .featured-products {
     padding: 2rem;
@@ -182,6 +194,7 @@ nav {
     cursor: pointer;
 }
 
+
 footer {
     background: #111;
     color: white;
@@ -219,7 +232,29 @@ footer {
     flex: 1;
 }
 
+
+@media (max-width: 1024px) {
+    .about p {
+        margin: 10px 50px 25px;
+    }
+}
+
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .topnav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .topnav input {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
     .banner h1 {
         font-size: 2rem;
     }
@@ -228,9 +263,12 @@ footer {
         font-size: 1rem;
     }
 
-    .topnav input {
-        width: 100%;
-        margin-top: 0.5rem;
+    .about p {
+        margin: 10px 20px 25px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
     }
 }
-
